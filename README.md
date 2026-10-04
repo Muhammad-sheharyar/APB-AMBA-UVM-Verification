@@ -23,6 +23,7 @@ UVM methodology with layered architecture.
 - PSLVERR assertion on invalid transfers
 
 ## Testbench Architecture
+```bash
 apb_full_test / apb_random_test / apb_wr_rd_test / apb_err_test / apb_boundary_test
 │
 ▼
@@ -37,7 +38,7 @@ driver seq monitor───┘
 │
 ▼
 DUT
-
+```
 
 ## Components
 
@@ -90,6 +91,7 @@ make sim TEST=apb_err_test
 make sim TEST=apb_boundary_test
 ```
 ### Project Structure
+```bash
 ├── rtl/
 │   ├── design.sv            # apb_wrapper (top DUT)
 │   ├── apb_fsm.sv           # APB slave state machine
@@ -122,27 +124,22 @@ make sim TEST=apb_boundary_test
 ├── testbench.sv             # Top module (clock, reset, DUT, run_test)
 ├── Makefile
 └── README.md
+```
 
-Tools Used
+### Tools Used
+```bash
 Simulator: Synopsys VCS (L-2016.06)
-
 Methodology: UVM 1.2
-
 Language: SystemVerilog
+```
 
-Key Concepts Demonstrated
+### Key Concepts Demonstrated
 UVM factory pattern (type_id::create)
-
 Config DB (set / get) for virtual interface passing
-
 Phases: build, connect, run, report
-
 TLM connections: seq_item_port ↔ seq_item_export
-
 Analysis port for monitor → scoreboard/coverage broadcast
-
 Field macros for auto print/copy/compare
-
 Functional coverage with cross coverage
 
 Reset handling and protocol-compliant driver
