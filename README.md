@@ -134,6 +134,7 @@ Language: SystemVerilog
 ```
 
 ### Key Concepts Demonstrated
+```bash
 UVM factory pattern (type_id::create)
 Config DB (set / get) for virtual interface passing
 Phases: build, connect, run, report
@@ -141,5 +142,6 @@ TLM connections: seq_item_port ↔ seq_item_export
 Analysis port for monitor → scoreboard/coverage broadcast
 Field macros for auto print/copy/compare
 Functional coverage with cross coverage
+```
 
 Reset handling and protocol-compliant driver
