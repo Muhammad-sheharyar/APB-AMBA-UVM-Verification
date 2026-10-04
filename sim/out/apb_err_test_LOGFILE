@@ -1,0 +1,186 @@
+
+Note-[RT_BS] Larger stack needed
+  Note: Bumping stack limit from 8192 to 8250 Kbytes.
+
+Chronologic VCS simulator copyright 1991-2016
+Contains Synopsys proprietary information.
+Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Oct  2 03:38 2026
+UVM_INFO /usr/synopsys/vcs-L-2016.06//etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+
+ VCS Coverage Metrics Release L-2016.06_Full64 Copyright (c) 1991-2016 by Synopsys Inc.
+VCD+ Writer L-2016.06_Full64 Copyright (c) 1991-2016 by Synopsys Inc.
+UVM_INFO @ 0: reporter [RNTST] Running test apb_err_test...
+UVM_INFO ../tb/apb_base_test.sv(26) @ 0: uvm_test_top [apb_err_test] UVM_BASE_TEST Build_Phase Started
+UVM_INFO ../tb/apb_env.sv(30) @ 0: uvm_test_top.env [apb_env] UVM_ENV Build_Phase Started
+UVM_INFO ../tb/apb_agent.sv(35) @ 0: uvm_test_top.env.apb_agnt [apb_agent] UVM_AGENT Build_Phase Started
+UVM_INFO ../tb/apb_driver.sv(27) @ 0: uvm_test_top.env.apb_agnt.driver [apb_driver] UVM_DRIVER Build_Phase Started
+UVM_INFO ../tb/apb_sequencer.sv(18) @ 0: uvm_test_top.env.apb_agnt.sequencer [apb_sequencer] UVM_Sequencer Build_Phase
+UVM_INFO ../tb/apb_agent.sv(49) @ 0: uvm_test_top.env.apb_agnt [apb_agent] UVM_AGENT Connect_Phase Started
+UVM_INFO ../tb/apb_env.sv(39) @ 0: uvm_test_top.env [apb_env] UVM_ENV Connect_Phase Started
+UVM_INFO ../tb/apb_base_test.sv(37) @ 0: uvm_test_top [apb_err_test] UVM_BASE_TEST End of Eloboration_Phase Started
+----------------------------------------------------------------
+Name                         Type                    Size  Value
+----------------------------------------------------------------
+uvm_test_top                 apb_err_test            -     @341 
+  env                        apb_env                 -     @356 
+    apb_agnt                 apb_agent               -     @373 
+      driver                 apb_driver              -     @413 
+        rsp_port             uvm_analysis_port       -     @432 
+        seq_item_port        uvm_seq_item_pull_port  -     @422 
+      monitor                apb_monitor             -     @394 
+        item_collected_port  uvm_analysis_port       -     @403 
+      sequencer              apb_sequencer           -     @442 
+        rsp_export           uvm_analysis_export     -     @451 
+        seq_item_export      uvm_seq_item_pull_imp   -     @569 
+        arbitration_queue    array                   0     -    
+        lock_queue           array                   0     -    
+        num_last_reqs        integral                32    'd1  
+        num_last_rsps        integral                32    'd1  
+    apb_scb                  apb_scoreboard          -     @382 
+      item_collected_export  uvm_analysis_imp        -     @590 
+----------------------------------------------------------------
+UVM_INFO ../tb/apb_driver.sv(36) @ 0: uvm_test_top.env.apb_agnt.driver [apb_driver] UVM_DRIVER Run_Phase Started
+UVM_INFO ../tb/apb_monitor.sv(65) @ 85: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00010000 data=0x00000000250fe8c6 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 85: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00010000 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 85: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00010000 wdata=0x00000000250fe8c6 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 95: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=10000 write=1 wdata = 250fe8c6
+UVM_INFO ../tb/apb_monitor.sv(65) @ 155: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00010008 data=0x000000000bc96be0 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 155: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00010008 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 155: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00010008 wdata=0x000000000bc96be0 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 165: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=10008 write=1 wdata = bc96be0
+UVM_INFO ../tb/apb_monitor.sv(65) @ 225: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00010010 data=0x00000000b4641d24 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 225: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00010010 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 225: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00010010 wdata=0x00000000b4641d24 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 235: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=10010 write=1 wdata = b4641d24
+UVM_INFO ../tb/apb_monitor.sv(65) @ 295: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00010018 data=0x00000000afbe95b0 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 295: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00010018 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 295: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00010018 wdata=0x00000000afbe95b0 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 305: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=10018 write=1 wdata = afbe95b0
+UVM_INFO ../tb/apb_monitor.sv(65) @ 365: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000001 data=0x00000000a9a3b466 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 365: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000001 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 365: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000001 wdata=0x00000000a9a3b466 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 375: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=1 write=1 wdata = a9a3b466
+UVM_INFO ../tb/apb_monitor.sv(65) @ 435: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000002 data=0x000000009b246051 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 435: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000002 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 435: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000002 wdata=0x000000009b246051 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 445: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=2 write=1 wdata = 9b246051
+UVM_INFO ../tb/apb_monitor.sv(65) @ 505: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000003 data=0x00000000232b9d2a strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 505: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000003 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 505: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000003 wdata=0x00000000232b9d2a strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 515: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=3 write=1 wdata = 232b9d2a
+UVM_INFO ../tb/apb_monitor.sv(65) @ 575: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000004 data=0x00000000152d6a18 strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 575: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000004 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 575: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000004 wdata=0x00000000152d6a18 strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 585: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=4 write=1 wdata = 152d6a18
+UVM_INFO ../tb/apb_monitor.sv(65) @ 645: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000005 data=0x00000000f198d24b strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 645: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000005 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 645: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000005 wdata=0x00000000f198d24b strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 655: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=5 write=1 wdata = f198d24b
+UVM_INFO ../tb/apb_monitor.sv(65) @ 715: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000006 data=0x00000000f93853cc strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 715: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000006 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 715: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000006 wdata=0x00000000f93853cc strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 725: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=6 write=1 wdata = f93853cc
+UVM_INFO ../tb/apb_monitor.sv(65) @ 785: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000007 data=0x00000000c4aff59b strb=0xff rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 785: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0x00000007 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 785: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000007 wdata=0x00000000c4aff59b strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 795: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=7 write=1 wdata = c4aff59b
+UVM_INFO ../tb/apb_monitor.sv(65) @ 855: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] RD  addr=0xfffffff8 data=0x0000000000000000 strb=0x00 rdata=0x0000000000000000 err=1
+UVM_ERROR ../tb/apb_scoreboard.sv(66) @ 855: uvm_test_top.env.apb_scb [apb_scoreboard] PSLVERR mismatch @addr=0xfffffff8 : expected=0 got=1
+UVM_INFO ../tb/apb_scoreboard.sv(90) @ 855: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] RD OK  addr=0xfffffff8 exp=0x0000000000000000 got=0x0000000000000000
+UVM_INFO ../tb/apb_driver.sv(44) @ 865: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=fffffff8 write=0 wdata = 0
+UVM_INFO ../tb/apb_monitor.sv(65) @ 925: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] RD  addr=0x00000000 data=0x0000000000000000 strb=0x00 rdata=0x0000000000000000 err=0
+UVM_ERROR ../tb/apb_scoreboard.sv(94) @ 925: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] RD FAIL addr=0x00000000 exp=0x9bcc4b182a516600 got=0x0000000000000000
+UVM_INFO ../tb/apb_driver.sv(44) @ 935: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=0 write=0 wdata = e0b617b8
+UVM_INFO ../tb/apb_monitor.sv(65) @ 995: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000008 data=0x00000000cbc5093c strb=0xff rdata=0x0000000000000000 err=0
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 995: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000008 wdata=0x00000000cbc5093c strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 1005: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=8 write=1 wdata = cbc5093c
+UVM_INFO ../tb/apb_monitor.sv(65) @ 1065: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] RD  addr=0x00000010 data=0x0000000000000000 strb=0x00 rdata=0x0000000000000000 err=0
+UVM_INFO ../tb/apb_scoreboard.sv(90) @ 1065: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] RD OK  addr=0x00000010 exp=0x0000000000000000 got=0x0000000000000000
+UVM_INFO ../tb/apb_driver.sv(44) @ 1075: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=10 write=0 wdata = cba33fd0
+UVM_INFO ../tb/apb_monitor.sv(65) @ 1135: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000018 data=0x00000000ed294b9e strb=0xff rdata=0x0000000000000000 err=0
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 1135: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000018 wdata=0x00000000ed294b9e strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 1145: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=18 write=1 wdata = ed294b9e
+UVM_INFO ../tb/apb_monitor.sv(65) @ 1205: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] RD  addr=0x00000020 data=0x0000000000000000 strb=0x00 rdata=0x0000000000000000 err=0
+UVM_INFO ../tb/apb_scoreboard.sv(90) @ 1205: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] RD OK  addr=0x00000020 exp=0x0000000000000000 got=0x0000000000000000
+UVM_INFO ../tb/apb_driver.sv(44) @ 1215: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=20 write=0 wdata = ded2bc7d
+UVM_INFO ../tb/apb_monitor.sv(65) @ 1275: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] WR  addr=0x00000028 data=0x000000008e12216f strb=0xff rdata=0x0000000000000000 err=0
+UVM_INFO ../tb/apb_scoreboard.sv(81) @ 1275: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] WR OK  addr=0x00000028 wdata=0x000000008e12216f strb=0xff
+UVM_INFO ../tb/apb_driver.sv(44) @ 1285: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=28 write=1 wdata = 8e12216f
+UVM_INFO ../tb/apb_monitor.sv(65) @ 1345: uvm_test_top.env.apb_agnt.monitor [apb_monitor] [MON] RD  addr=0x00000030 data=0x0000000000000000 strb=0x00 rdata=0x0000000000000000 err=0
+UVM_INFO ../tb/apb_scoreboard.sv(90) @ 1345: uvm_test_top.env.apb_scb [apb_scoreboard] [SCB] RD OK  addr=0x00000030 exp=0x0000000000000000 got=0x0000000000000000
+UVM_INFO ../tb/apb_driver.sv(44) @ 1355: uvm_test_top.env.apb_agnt.driver [apb_driver] Driving Transaction: addr=30 write=0 wdata = a4d2e7e8
+UVM_INFO /usr/synopsys/vcs-L-2016.06//etc/uvm-1.2/base/uvm_objection.svh(1270) @ 1355: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/apb_scoreboard.sv(102) @ 1355: uvm_test_top.env.apb_scb [apb_scoreboard] ================ SCOREBOARD SUMMARY ================
+UVM_INFO ../tb/apb_scoreboard.sv(103) @ 1355: uvm_test_top.env.apb_scb [apb_scoreboard]   WRITES = 14
+UVM_INFO ../tb/apb_scoreboard.sv(104) @ 1355: uvm_test_top.env.apb_scb [apb_scoreboard]   READS  = 5
+UVM_INFO ../tb/apb_scoreboard.sv(105) @ 1355: uvm_test_top.env.apb_scb [apb_scoreboard]   ERRORS = 0
+UVM_INFO ../tb/apb_scoreboard.sv(106) @ 1355: uvm_test_top.env.apb_scb [apb_scoreboard] ====================================================
+UVM_INFO ../tb/apb_base_test.sv(51) @ 1355: uvm_test_top [apb_err_test] ---------------------------------------
+UVM_INFO ../tb/apb_base_test.sv(52) @ 1355: uvm_test_top [apb_err_test] ----            TEST FAIL          ----
+UVM_INFO ../tb/apb_base_test.sv(53) @ 1355: uvm_test_top [apb_err_test] ---------------------------------------
+UVM_INFO /usr/synopsys/vcs-L-2016.06//etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 1355: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /usr/synopsys/vcs-L-2016.06//etc/uvm-1.2/base/uvm_report_server.svh(894) @ 1355: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   77
+UVM_WARNING :    0
+UVM_ERROR :   13
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[apb_agent]     2
+[apb_driver]    21
+[apb_env]     2
+[apb_err_test]     5
+[apb_monitor]    19
+[apb_scoreboard]    36
+[apb_sequencer]     1
+
+$finish called from file "/usr/synopsys/vcs-L-2016.06//etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time                 1355
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1355
+CPU Time:      0.630 seconds;       Data structure size:   0.5Mb
+Fri Oct  2 03:38:04 2026
